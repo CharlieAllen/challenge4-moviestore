@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'devise'
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.4.5'
 
 group :development, :test do
   gem 'byebug'
