@@ -10,8 +10,10 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
-@import "foundation/components/labels";
+/*@import "foundation/functions";
+@import "foundation/components/labels";*/
+@import "_settings";
+@import "foundation";
 
 // $experimental: true;
 
@@ -671,7 +673,7 @@ $label-font-sizing: rem-calc(14);
 // $label-font-family: $body-font-family;
 
 .movie-label {
-  @include label( $text-size:13px, $bg: #3D3D32 );
+  // @include label( $text-size:13px, $bg: #3D3D32 );
   color: gold;
 }
 
