@@ -6,5 +6,6 @@ class CreatePurchases < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :purchases, [:movie_id, :buyer_id], unique: true
   end
 end
