@@ -19,7 +19,7 @@ class TransactionsController < ApplicationController
               amount: current_user.cart_total_price,
               payment_method_nonce: params[:payment_method_nonce])
     if @result.success?
-      current_user.purchase_cart_movies!
+      current_user.purchase_cart_movies
       redirect_to root_url, notice: "Congraulations! You've purchased new movies successfully!"
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
