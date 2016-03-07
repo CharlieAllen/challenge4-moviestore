@@ -8,17 +8,17 @@ class CartsController < ApplicationController
 
   def add
   	$redis.sadd current_user_cart, params[:movie_id]
-  	render json: current_user., cart_count, status: 200
+  	render json: current_user.cart_count, status: 200
   end
 
   def remove
   	$redis.srem current_user_cart, params[:movie_id]
-  	render json: current_user.cart_count, status 200
+  	render json: current_user.cart_count, status: 200
   end
 
   private
 
   def current_user_cart
-  	"cart#{current_user_id}"
+  	"cart#{current_user.id}"
   end
 end
