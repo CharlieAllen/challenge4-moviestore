@@ -2,11 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(window).load -> 
-$('#mycart .fi-x').click (e) ->
-	e.preventDefault()
-	$this = $(this).closest('a')
-	url = $this.data('targeturl')
-	$.ajax url: url, type: 'put', success: (data) ->
-		$('.cart-count').html(data)
-		$this.closest('.cart-movie').slideUp()
+$ ->
+  $('#mycart .fi-x').click (e) ->
+    e.preventDefault()
+    $this = $(this).closest('a')
+    url = $this.data('targeturl')
+    $.ajax url: url, type: 'put', success: (data) ->
+      $('.cart-count').html(data)
+      $this.closest('.cart-movie').slideUp()
