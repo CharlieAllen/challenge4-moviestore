@@ -15,6 +15,8 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.6.1'
+gem 'braintree', '~> 2.33.1'
+gem 'figaro', '~> 0.7.0'
 
 group :development, :test do
   gem 'byebug'
