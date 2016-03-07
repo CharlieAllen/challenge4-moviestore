@@ -6,8 +6,9 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "MovieStore - Online Movies" %></title>
 
+    <%= include_gon %>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "vendor/modernizor", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 

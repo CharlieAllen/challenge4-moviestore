@@ -17,7 +17,7 @@ gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.6.1'
 gem 'braintree', '~> 2.33.1'
 gem 'figaro', '~> 0.7.0'
-gem 'gon', '~> 5.1.2'
+gem 'gon', '~> 6.0.1'
 
 group :development, :test do
   gem 'byebug'
