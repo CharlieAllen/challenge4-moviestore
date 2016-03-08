@@ -18,6 +18,7 @@ gem 'hiredis', '~> 0.6.1'
 gem 'braintree', '~> 2.33.1'
 gem 'figaro', '~> 0.7.0'
 gem 'gon', '~> 6.0.1'
+gem 'modernizr-rails'
 
 group :development, :test do
   gem 'byebug'
