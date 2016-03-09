@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 		end
 
 	resource :transactions, only: [:new, :create]  
+
+	get 'mymovies', to: 'user#purchased_movies', as: :user_movies
 end

@@ -15,7 +15,11 @@
 			<ul class="right">
 			<% if signed_in? %>
 			<li>
-				<%= link_to cart_path do %>
+				<%= link_to user_movies_path do %>
+				<i class="fi-purchased-movies"></i>My Purchases(<span class="movies_count"><%= current_user.movies.count %></span>)
+				<% end %>
+				</li>
+				<li><%= link_to cart_path do %>
 					<i class="fi-shopping-cart"></i>My Cart(<span class="cart_count"><%= current_user.cart_count %></span>)
 				<% end %>
 			</li>
