@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require_tree .
+//= require carts
+//= require movies
+//= require transactions
 
 $(function(){ $(document).foundation(); });

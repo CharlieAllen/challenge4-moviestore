@@ -11,7 +11,18 @@ body {
 	background-image: url(body_bg.png);
 	background-position: center;
 	color: #fff;
-	color: purple;
+	a {
+		color: white;
+		&:hover {
+			color: gold;
+		}
+		&:visited {
+			color: turquoise;
+		}
+		&:active {
+			color: pink;
+		}
+	}
 }
 
 /*Logo*/
