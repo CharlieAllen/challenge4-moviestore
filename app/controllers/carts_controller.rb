@@ -7,7 +7,6 @@ class CartsController < ApplicationController
 
   def add
   	$redis.sadd current_user_cart, params[:movie_id]
-    byebug
   	render json: current_user.cart_count, status: 200
   end
 
@@ -19,6 +18,6 @@ class CartsController < ApplicationController
   private
 
   def current_user_cart
-  	"cart#{current_user.id}"
+  	return "cart#{current_user.id}"
   end
 end

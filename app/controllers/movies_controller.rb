@@ -1,7 +1,22 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+  	user_movies = 
+  		if current_user
+  			current_user.movies
+  		else 
+  			[]
+  		end
+
+    all_movies = Movie.all
+    @movies = all_movies - user_movies
+
+    @cart_movies =
+    if current_user
+    	current_user.get_cart_movies
+    else
+    	[]
+    end
   end
 
   def show

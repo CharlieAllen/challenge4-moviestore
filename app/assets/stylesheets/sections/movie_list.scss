@@ -1,0 +1,20 @@
+ul.movies-grid{
+	border: 20px solid gold;
+	li {
+		.poster {
+			img {
+				
+			}
+		}
+		&.not-in-cart {
+			.poster img {
+
+			}
+		}
+		&.in-cart {
+			.poster img {
+				border: 10px dashed pink;
+			}
+		}
+	}
+}
