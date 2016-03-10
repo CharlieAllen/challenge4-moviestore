@@ -2,6 +2,9 @@
 	<div class="p1 glassy-bg mb1 text-center radius-11 radius-r1">
 		<h4>My Cart</h4>
 		<p class="mb0"> You've selected <span class="cart-count"><%= current_user.cart_count %> movies!</span></p>
+		<%= form_for :cart_movies, :html => {method: "delete"}, url: empty_cart_path do |f| %>
+		<%= f.submit "Empty your cart" %>
+		<% end %>
 	</div>
 
 <% @cart_movies.each do |movie| %>

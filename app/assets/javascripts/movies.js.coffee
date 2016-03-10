@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  console.log($('a[data-target'));
+  # console.log($('a[data-target'));
   $('a[data-target]').click (e) ->
     e.preventDefault()
     $this = $(this)

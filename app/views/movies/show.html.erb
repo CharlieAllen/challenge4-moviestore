@@ -29,6 +29,11 @@
         <i class="fi-shopping-cart"></i>
         <span><%=@cart_action%></span> Cart
       <%end%>
+
+<!--       <#%= form_for :cart_movies, :html => {method: "put"}, url: remove_from_cart_path(@movie) do |f| %>
+      <#%= f.submit "Remove from cart" %>
+      <#% end %> -->
+
     <%end%>
   <%end%>
 </div>

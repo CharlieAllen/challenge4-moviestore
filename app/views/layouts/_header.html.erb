@@ -23,7 +23,7 @@
 						<i class="fi-shopping-cart"></i>My Cart(<span class="cart_count"><%= current_user.cart_count %></span>)
 						<% end %>
 					</li>
-					<li><%= link_to current_user.email, edit_user_registration_path %></li>
+					<li><%= link_to "My Account", edit_user_registration_path %></li>
 					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 					<% else %>
 					<li><%= link_to "Register", new_user_registration_path %></li>

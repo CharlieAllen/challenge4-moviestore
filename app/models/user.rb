@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def get_cart_movies
   	cart_ids = $redis.smembers "cart#{id}"
-  	Movie.find(cart_ids)
+  	Movie.where(id: cart_ids)
   end
 
   def purchase_cart_movies
