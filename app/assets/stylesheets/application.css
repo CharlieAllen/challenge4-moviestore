@@ -15,4 +15,6 @@
  *= require layout
  *= require components/video_player
  *= require sections/movie_list
+ *= require movies
+ *= require helpers
  */
