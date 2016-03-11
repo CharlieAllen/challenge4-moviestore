@@ -1,6 +1,10 @@
 /*Custom layout styles
 Default font family*/
 
+li {
+	list-style: none;
+}
+
 @font-face {
 	font-family: 'gotham-rounded';
 	src: url(gotham-rounded-medium.otf);

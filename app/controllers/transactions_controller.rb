@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    gon.client_token = generate_new_client_token
+    gon.client_token = generate_client_token
   end
 
   def edit
@@ -37,11 +37,11 @@ class TransactionsController < ApplicationController
 
       if @result.success?
         current_user.update(braintree_customer_id: @result.transaction.customer_details.id) unless current_user.has_payment_info?
-        current_user.purchase_cart_movies!
+        current_user.purchase_cart_movies
         redirect_to root_url, notice: "Your transaction was successful."
       else
         flash[:alert] = "Something went wrong while processing your transaction. Please try again."
-        gon.client_token = generate_new_client_token
+        gon.client_token = generate_client_token
         render :new
       end
     end

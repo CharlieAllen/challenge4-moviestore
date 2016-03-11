@@ -14,16 +14,17 @@
       <div class="switch round small mb1">
         <div class="inline-block left prm">
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
           <span>Remember Me</span>
         <!-- </div> -->
       </div>
     <% end -%>
 
     <div class="clear">
-      <%= f.submit "Let me in", class: "button" %>
+      <%= f.submit "Log in", class: "button" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
 </div>
+
+
