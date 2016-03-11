@@ -7,12 +7,14 @@ class CartsController < ApplicationController
 
   def add
   	$redis.sadd current_user_cart, params[:movie_id]
-  	render json: current_user.cart_count, status: 200
+  	#render json: current_user.cart_count, status: 200
+    redirect_to movie_path(params[:movie_id])
   end
 
   def remove
   	$redis.srem current_user_cart, params[:movie_id]
-  	render json: current_user.cart_count, status: 200
+  	#render json: current_user.cart_count, status: 200
+    redirect_to '/movies'
   end
 
   def delete
