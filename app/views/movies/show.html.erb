@@ -25,23 +25,15 @@
         </div>
       </div>
     <%else%>
-      <%= form_for :cart_movies, :html => {method: "PUT"}, url: add_to_cart_path(@movie) do |f| %>
-        <%= f.submit "Add to cart" %>
-      <% end %>
-      <%= form_for :cart_movies, :html => {method: "PUT"}, url: remove_from_cart_path(@movie) do |f| %>
-        <%= f.submit "Remove from cart" %>
-      <% end %>
-
-
-<!--       <#%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do %>
-        <i class="fi-shopping-cart"></i>
-        <span><%= @cart_action %></span> Cart
-      <#%end%> -->
-
-<!--       <#%= form_for :cart_movies, :html => {method: "put"}, url: remove_from_cart_path(@movie) do |f| %>
-      <#%= f.submit "Remove from cart" %>
-      <#% end %> -->
-
+      <% if @can_add_to_cart %>
+          <%= form_for :cart_movies, :html => {method: "PUT"}, url: add_to_cart_path(@movie) do |f| %>
+          <%= f.submit "Add to cart" %>
+          <% end %>
+        <% else %>          
+          <%= form_for :cart_movies, :html => {method: "PUT"}, url: remove_from_cart_path(@movie) do |f| %>
+          <%= f.submit "Remove from cart" %>
+          <% end %>
+      <% end %>    
     <%end%>
   <%end%>
 </div>

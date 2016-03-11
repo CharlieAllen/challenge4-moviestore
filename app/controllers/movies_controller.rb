@@ -21,15 +21,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @cart_action = @movie.cart_action current_user.try :id
+    @can_add_to_cart = !(@movie.cart_action current_user.try :id)
   end
-
-  def cart_action(current_user_id)
-    if $redis.sismember "cart#{current_user_id}", id
-      "Remove from"
-    else
-      "Add to"
-    end
-  end
-
 end
