@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 	  delete 'destroy', to: 'carts#delete', as: :empty
 	end
 
+	get '/test', to: 'carts#test'
+
 	get 'mymovies', to: 'user#purchased_movies', as: :user_movies
 end

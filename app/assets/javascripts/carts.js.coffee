@@ -2,26 +2,26 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-handle_cart_submit = (e) ->
-	e.preventDefault()
-	url = this.action
-	type = this.method
-	data = $(this).serialize()
-	$.ajax url: url, type: type, data: data, success: cart_submit_callback, error: cart_submit_error
-
-
-cart_submit_error = (data) ->
+cart_submit_error = (data, status, jqXHR) ->
 	alert('Things be broke, yo')
 
-cart_submit_callback = (data) ->
-	console.log(data)
-	alert("I'm back (from outer space)")
+cart_submit_callback = (data, status, jqXHR) ->
+	the_form = this
+	$the_form = $(the_form)
+	$the_button = $the_form.find('[name=commit]')
+	$the_button.val(data.button_label)
+	the_form.action = data.cart_action
+	alert("#{data.movie_name} #{data.movie_cart_status}")
+
+handle_cart_submit = (e) ->
+	e.preventDefault()
+	the_form = this
+	url = the_form.action
+	type = the_form.method
+	data = $(the_form).serialize()
+	$.ajax url: url, type: type, data: data, success: cart_submit_callback.bind(the_form), error: cart_submit_error.bind(the_form), headers: { Accept: "application/json; charset=utf-8" }
+
 
 $ ->
 	form_cart_button = $('form.cart-button')
 	form_cart_button.on "submit", handle_cart_submit
-    # $this = $(this).closest('a')
-    # url = $this.data('targeturl')
-    # $.ajax url: url, type: 'put', success: (data) ->
-    #   $('.cart-count').html(data)
-    #   $this.closest('.cart-movie').slideUp()
