@@ -26,11 +26,11 @@
       </div>
     <%else%>
       <% if @can_add_to_cart %>
-          <%= form_for :cart_movies, :html => {method: "PUT"}, url: add_to_cart_path(@movie) do |f| %>
+          <%= form_for :cart_movies, :html => {method: "PUT", class: "cart-button"}, url: add_to_cart_path(@movie) do |f| %>
           <%= f.submit "Add to cart" %>
           <% end %>
         <% else %>          
-          <%= form_for :cart_movies, :html => {method: "PUT"}, url: remove_from_cart_path(@movie) do |f| %>
+          <%= form_for :cart_movies, :html => {method: "PUT", class: "cart-button"}, url: remove_from_cart_path(@movie) do |f| %>
           <%= f.submit "Remove from cart" %>
           <% end %>
       <% end %>    
