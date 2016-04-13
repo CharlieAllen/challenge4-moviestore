@@ -5,27 +5,15 @@ class CartsController < ApplicationController
   def show
   end
 
-  # def test
-  #   movie = Movie.all.sample
-  #   data = {}
-  #   data[:button_label] = "Remove from cart"
-  #   data[:movie_name] = movie.title
-  #   data[:movie_id] = movie.id
-  #   data[:movie_path] = movie_url(movie.id)
-  #   data[:cart_action] = add_to_cart_path(movie.id)
-  #   respond_to do |format|
-  #     # if current_user_cart
-  #     format.html { redirect_to movie_path(Movie.last.id) }
-  #     format.json { render json: data, status: 200 }
-  #     # format.js { render inline: ":movie_id", status: 200 }
-  #   end
-  # end
-
   def add
+    
   	$redis.sadd current_user_cart, params[:movie_id]
 
+    # the current movie is found by its ID and assigned to the variable called 'movie'
     movie = Movie.find(params[:movie_id])
+    # the variable called data is assigned an empty object, ready to receive information
     data = {}
+    # 
     data[:button_label] = "Remove from cart"
     data[:movie_name] = movie.title
     data[:movie_id] = movie.id
